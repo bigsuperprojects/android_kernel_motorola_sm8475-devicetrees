@@ -75,28 +75,25 @@
 		goodix,irq-gpio = <&tlmm 21 0x2002>;
 		goodix,irq-flags = <0x2002>; /* 1:trigger rising, 2:trigger falling;*/
 		goodix,panel-max-id = <10>;
-		goodix,panel-max-x = <8640>;
-		goodix,panel-max-y = <19200>;
+		goodix,panel-max-x = <1080>;
+		goodix,panel-max-y = <2400>;
 		goodix,panel-max-w = <255>;
 		goodix,panel-max-p = <4096>;
 		goodix,avdd-name = "pm8350c_l3";
 		goodix,iovdd-name = "pm8350c_l2";
-		goodix,pen-enable;
-		goodix,film_mode-ctrl;
-		goodix,stylus_mode-ctrl;
-		goodix,leather_mode-ctrl;
 		goodix,sensitivity-ctrl;
+		goodix,film_mode-ctrl;
+		goodix,report_rate-ctrl;
+		goodix,interpolation-ctrl;
 		goodix,edge-ctrl;
-		goodix,stylus-clk-source = "stylus_clk_pmic"; /* use LNBBCLK3 as stylus clk*/
 		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend", "pmx_ts_release";
 		pinctrl-0 = <&ts_active>;
 		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
 		pinctrl-2 = <&ts_release>;
-		clocks = <&clock_rpmh RPMH_LN_BB_CLK3>;
-		clock-names = "stylus_clk";
 		mmi,enable-gestures;
 		mmi,power-off-suspend;
 		mmi,usb-charger-detection;
+		mmi,refresh-rate-update;
 		mmi,supported_gesture_type = <0x07>;
 	};
 };
